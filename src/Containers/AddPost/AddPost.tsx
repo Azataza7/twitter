@@ -1,5 +1,5 @@
 import React, {useCallback, useState, useEffect} from 'react';
-import {useNavigate, useLocation} from 'react-router-dom';
+import {useNavigate, useLocation, useParams} from 'react-router-dom';
 import {NewPost, Post} from '../../types';
 import axiosApi from '../../axiosApi';
 import Spinner from '../../Components/Spinner/Spinner';
@@ -19,14 +19,15 @@ const AddPost: React.FC = () => {
       const post: Post = location.state.post;
 
       setNewPost({
+        id: post.id,
         title: post.title || '',
         description: post.description || '',
         createdAt: post.createdAt || new Date().toLocaleString()
-      })
+      });
     }
-  }, [location.state])
+  }, [location.state]);
 
-  const postChanged = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+  const postChanged = useCallback((event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {name, value} = event.target;
 
     setNewPost(prevState => ({
@@ -40,7 +41,11 @@ const AddPost: React.FC = () => {
     setLoading(true);
 
     try {
-      await axiosApi.post('posts.json', newPost);
+      if (location.state && location.state.post) {
+        await axiosApi.patch(`posts/${location.state.post.id}.json`, newPost);
+      } else {
+        await axiosApi.post('posts.json', newPost);
+      }
       navigate('/');
     } finally {
       setLoading(false);

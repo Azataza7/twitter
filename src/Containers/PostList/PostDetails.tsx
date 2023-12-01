@@ -42,8 +42,11 @@ const PostDetails = () => {
         <Link className="btn btn-danger" to="/" onClick={deletePost}>Delete</Link>
         <Link
           className="btn btn-secondary"
-          to={{pathname: '/posts' + params.articleId + '/edit', state: { post: postDetail}
-          }}>Edit</Link>
+          to={`/posts/${params.articleId}/edit`}
+          state={{ post: postDetail }}
+        >
+          Edit
+        </Link>
       </div>
     </div>
   );
