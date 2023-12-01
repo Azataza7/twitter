@@ -2,12 +2,13 @@ import React, {useEffect, useState} from 'react';
 import axiosApi from '../../axiosApi';
 import PostItem from './PostItem';
 import Spinner from '../Spinner/Spinner';
-import {Post, PostList} from '../../types';
+import {PostList} from '../../types';
+import {useNavigate} from 'react-router-dom';
 
 const Posts = () => {
   const [postList, setPostList] = useState<PostList[]>([]);
   const [loading, setLoading] = useState(false);
-
+  const navigate = useNavigate();
 
   const fetchData = async () => {
     setLoading(true);
@@ -22,6 +23,8 @@ const Posts = () => {
       }));
 
       setPostList(postsArray.reverse());
+    } catch {
+      navigate('*');
     } finally {
       setLoading(false);
     }
@@ -35,10 +38,9 @@ const Posts = () => {
 
   let posts = (
     postList.map((postItem, i) => (
-        <PostItem key={i} post={postItem}/>
-      ))
+      <PostItem key={i} post={postItem}/>
+    ))
   );
-
 
   return (
     <div className="p-2">

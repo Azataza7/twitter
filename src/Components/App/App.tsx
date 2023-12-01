@@ -5,6 +5,7 @@ import Contacts from '../../Containers/Contacts/Contacts';
 import About from '../../Containers/About/About';
 import AddPost from '../../Containers/AddPost/AddPost';
 import PostList from '../../Containers/PostList/PostList';
+import PostDetails from '../../Containers/PostList/PostDetails';
 
 const App = () => {
 
@@ -19,9 +20,12 @@ const App = () => {
             <PostList/>
           )}/>
           <Route path='/posts/:articleId' element={(
-            <AddPost/>
+            <PostDetails/>
           )}/>
           <Route path="/new-post" element={(
+            <AddPost/>
+          )}/>
+          <Route path="/posts/:articleId/edit" element={(
             <AddPost/>
           )}/>
           <Route path="/contacts" element={(

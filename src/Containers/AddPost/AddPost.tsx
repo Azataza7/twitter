@@ -1,17 +1,30 @@
-import React, {useCallback, useState} from 'react';
-import {useNavigate} from 'react-router-dom';
-import {Post} from '../../types';
+import React, {useCallback, useState, useEffect} from 'react';
+import {useNavigate, useLocation} from 'react-router-dom';
+import {NewPost, Post} from '../../types';
 import axiosApi from '../../axiosApi';
 import Spinner from '../../Components/Spinner/Spinner';
 
 const AddPost: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [loading, setLoading] = useState(false);
-  const [newPost, setNewPost] = useState<Post>({
+  const [newPost, setNewPost] = useState<NewPost>({
     title: '',
     description: '',
     createdAt: new Date().toLocaleString(),
   });
+
+  useEffect(() => {
+    if (location.state && location.state.post) {
+      const post: Post = location.state.post;
+
+      setNewPost({
+        title: post.title || '',
+        description: post.description || '',
+        createdAt: post.createdAt || new Date().toLocaleString()
+      })
+    }
+  }, [location.state])
 
   const postChanged = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const {name, value} = event.target;

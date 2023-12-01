@@ -8,3 +8,9 @@ export interface Post {
 export interface PostList {
   posts: Post[];
 }
+
+export interface NewPost {
+  title: string;
+  description: string;
+  createdAt: string;
+}
