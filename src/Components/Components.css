@@ -2,7 +2,7 @@
   display: inline-block;
   width: 100px;
   height: 100px;
-  background: url("x.svg") no-repeat;
+  background: url("././images/x.svg") no-repeat;
   background-size: contain;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .contacts input {
-  background: #FFF url("./search_icon.svg") no-repeat center right 5px;
+  background: #FFF url("././images/search_icon.svg") no-repeat center right 5px;
   border: 1px solid #637888;
   border-radius: 4px;
   color: #14171a;
@@ -61,7 +61,7 @@
 
 .about {
   padding: 25% 40%;
-  background: url("/x.svg") no-repeat;
+  background: url("././images/x.svg") no-repeat;
   background-size: contain;
   max-width: 800px;
   position: relative;
@@ -86,4 +86,26 @@
   font-size: 4.5rem;
   line-height: 4.5rem;
   letter-spacing: -.025rem;
+}
+
+.form-group label {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.form-group textarea {
+  max-width: 600px;
+  height: 400px;
+}
+
+.form-group input {
+  max-width: 600px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form {
+  padding: 40px;
 }

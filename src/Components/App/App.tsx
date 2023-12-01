@@ -4,6 +4,7 @@ import {Routes, Route} from 'react-router-dom';
 import Spinner from '../Spinner/Spinner';
 import Contacts from '../../Containers/Contacts/Contacts';
 import About from '../../Containers/About/About';
+import AddPost from '../../Containers/AddPost/AddPost';
 
 const App = () => {
 
@@ -16,6 +17,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={(
             <Spinner/>
+          )}/>
+          <Route path="/new-post" element={(
+            <AddPost/>
           )}/>
           <Route path="/contacts" element={(
             <Contacts/>
