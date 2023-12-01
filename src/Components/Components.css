@@ -1,0 +1,89 @@
+.x-logo {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: url("x.svg") no-repeat;
+  background-size: contain;
+}
+
+.header {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.nav {
+  padding: 10px 0;
+}
+
+.result-info {
+  padding: 200px;
+  background: url("https://www.ecommerce-nation.com/wp-content/uploads/2017/08/How-to-Give-Your-E-Commerce-No-Results-Page-the-Power-to-Sell.png.webp") no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.contacts {
+  padding: 10% 20% 20% 20%;
+  background: url("https://cdn.cms-twdigitalassets.com/content/dam/help-twitter/homepage/en/home-masthead-desktop.jpg.twimg.1920.jpg") no-repeat;
+}
+
+.text-1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: 32px;
+  color: white;
+  max-width: 320px;
+}
+
+.text-2 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4rem;
+  max-width: 320px;
+  color: white;
+}
+
+.contacts input {
+  background: #FFF url("./search_icon.svg") no-repeat center right 5px;
+  border: 1px solid #637888;
+  border-radius: 4px;
+  color: #14171a;
+  font-size: .9rem;
+  font-weight: 400;
+  height: 40px;
+  letter-spacing: .025rem;
+  line-height: 40px;
+  outline: none;
+  padding: 0 55px 0 16px;
+  width: 60%;
+}
+
+.about {
+  padding: 25% 40%;
+  background: url("/x.svg") no-repeat;
+  background-size: contain;
+  max-width: 800px;
+  position: relative;
+}
+
+.about-container {
+  position: absolute;
+  top: 25%;
+  right: 0;
+  max-width: 400px;
+}
+
+.about p {
+  font-weight: 700;
+  font-size: .87rem;
+  line-height: 1.5rem;
+  letter-spacing: .03rem;
+}
+
+.about h1 {
+  font-weight: 700;
+  font-size: 4.5rem;
+  line-height: 4.5rem;
+  letter-spacing: -.025rem;
+}
