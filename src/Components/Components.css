@@ -109,3 +109,26 @@
 .form {
   padding: 40px;
 }
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+}
+
+.post-box {
+  border: 1px solid #111;
+  border-radius: 10px;
+  position: relative;
+}
+
+.datetime {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  font-size: 14px;
+}
+
+.post-title {
+  word-wrap: break-word;
+}

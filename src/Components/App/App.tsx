@@ -1,10 +1,10 @@
 import Navbar from '../NavBar/Navbar';
 import '../Components.css';
 import {Routes, Route} from 'react-router-dom';
-import Spinner from '../Spinner/Spinner';
 import Contacts from '../../Containers/Contacts/Contacts';
 import About from '../../Containers/About/About';
 import AddPost from '../../Containers/AddPost/AddPost';
+import PostList from '../../Containers/PostList/PostList';
 
 const App = () => {
 
@@ -16,7 +16,10 @@ const App = () => {
       <main className="main">
         <Routes>
           <Route path="/" element={(
-            <Spinner/>
+            <PostList/>
+          )}/>
+          <Route path='/posts/:articleId' element={(
+            <AddPost/>
           )}/>
           <Route path="/new-post" element={(
             <AddPost/>

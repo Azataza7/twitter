@@ -1,12 +1,12 @@
 import React from 'react';
-import axiosApi from '../../axiosApi';
+import Posts from '../../Components/Posts/Posts';
 
 const PostList = () => {
 
   return (
-    <div>
-
-    </div>
+    <>
+      <Posts/>
+    </>
   );
 };
 

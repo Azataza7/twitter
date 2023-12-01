@@ -2,14 +2,15 @@ import React, {useCallback, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {Post} from '../../types';
 import axiosApi from '../../axiosApi';
+import Spinner from '../../Components/Spinner/Spinner';
 
 const AddPost: React.FC = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [newPost, setNewPost] = useState<Post>({
-    id: '',
     title: '',
     description: '',
+    createdAt: new Date().toLocaleString(),
   });
 
   const postChanged = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,6 +57,10 @@ const AddPost: React.FC = () => {
       <button className="btn btn-primary" type="submit">Save</button>
     </form>
   );
+
+  if (loading) {
+    form = <Spinner/>;
+  }
 
   return (
     <div>
