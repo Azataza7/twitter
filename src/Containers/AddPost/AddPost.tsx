@@ -1,5 +1,5 @@
 import React, {useCallback, useState, useEffect} from 'react';
-import {useNavigate, useLocation, useParams} from 'react-router-dom';
+import {useNavigate, useLocation} from 'react-router-dom';
 import {NewPost, Post} from '../../types';
 import axiosApi from '../../axiosApi';
 import Spinner from '../../Components/Spinner/Spinner';
@@ -19,7 +19,6 @@ const AddPost: React.FC = () => {
       const post: Post = location.state.post;
 
       setNewPost({
-        id: post.id,
         title: post.title || '',
         description: post.description || '',
         createdAt: post.createdAt || new Date().toLocaleString()

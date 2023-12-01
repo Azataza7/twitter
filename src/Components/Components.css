@@ -2,7 +2,7 @@
   display: inline-block;
   width: 100px;
   height: 100px;
-  background: url("../images/x.svg") no-repeat;
+  background: url("././images/x.svg") no-repeat;
   background-size: contain;
 }
 
@@ -61,7 +61,7 @@
 
 .about {
   padding: 25% 40%;
-  background: url("../images/x.svg") no-repeat;
+  background: url("././images/x.svg") no-repeat;
   background-size: contain;
   max-width: 800px;
   position: relative;

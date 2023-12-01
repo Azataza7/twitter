@@ -43,7 +43,7 @@ const PostDetails = () => {
         <Link
           className="btn btn-secondary"
           to={`/posts/${params.articleId}/edit`}
-          state={{ post: postDetail }}
+          state={{ post: postDetail}}
         >
           Edit
         </Link>
